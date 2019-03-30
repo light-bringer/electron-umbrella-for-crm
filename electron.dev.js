@@ -36,7 +36,10 @@ const createWindow = () => {
     win.on('closed', () => {
       win = null;
     });
-  }, 1000000);
+    // my system is slow so 
+    // it takes quite some time to build the angular files, 
+    // hence, the timeout is high, reduce it if you want.
+  }, 10000); 
 }
 
 app.on('ready', createWindow);
