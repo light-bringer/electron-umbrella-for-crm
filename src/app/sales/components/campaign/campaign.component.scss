@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.no-records {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.campaign {
+  display: inline-table;
+  flex-direction: column;
+}
+
+.campaign-control {
+  margin: 5px;
+  align-content: flex-start;
+  width: 100%;
+}
+
+.dialog-content-class {
+  height: 400px;
+  width: 500px;
+}

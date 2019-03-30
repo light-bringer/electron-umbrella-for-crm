@@ -1,0 +1,134 @@
+<crm-command-bar class="crm-command-bar" fxHide.xs>
+  <button mat-button class="crm-command-bar-button" (click)="onNew()">
+    <mat-icon>add</mat-icon>
+    NEW
+  </button>
+</crm-command-bar>
+
+<div class="crm-component-title-container">
+  <h3 class="crm-component-title"> Campaigns </h3>
+</div>
+
+<div fxLayout fxLayout.lt-md="column wrap" fxLayoutAlign="center center" fxLayoutGap.gt-sm="250px"
+     fxLayoutGap.lt.md="20px">
+  <mat-form-field>
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+<div #tableContainer class="crm-table-container">
+  <div class="mat-elevation-z8">
+
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let element"><a [routerLink]="" (click)="forEdit = false; showCampaign(element._id)">
+          {{element.name}}
+        </a></td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+        <td mat-cell *matCellDef="let element"> {{element.description}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="telephone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Telephone</th>
+        <td mat-cell *matCellDef="let element"> {{element.telephone}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let element"> {{element.email}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="created_at">
+        <th mat-header-cell *matHeaderCellDef>Created At</th>
+        <td mat-cell *matCellDef="let element"> {{element.created_at}}</td>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-cell>
+            <button mat-icon-button (click)="forEdit = true; editCampaign(element._id)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="removeCampaign(element._id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-cell>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <div *ngIf="noData | async" class="no-records">
+      No records found
+    </div>
+    <mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20, 30, 40, 50]">
+    </mat-paginator>
+  </div>
+</div>
+
+<ng-template #newCampaignDialog>
+      <h3>Campaign Details</h3>
+      <form [formGroup]="campaignForm" autocomplete="off">
+        <mat-dialog-content class="campaign">
+
+          <mat-form-field class="campaign-control">
+            <input matInput type="text" placeholder="Name" formControlName="name">
+          </mat-form-field>
+
+          <mat-form-field class="campaign-control">
+            <input matInput type="text" placeholder="Description" formControlName="description">
+          </mat-form-field>
+
+          <mat-form-field class="campaign-control">
+            <input matInput type="text" placeholder="Telephone" formControlName="telephone">
+          </mat-form-field>
+
+          <mat-form-field class="campaign-control">
+            <input matInput type="email" placeholder="Email address" formControlName="email" email="true">
+          </mat-form-field>
+
+          <mat-dialog-actions>
+            <button class="mat-raised-button mat-primary" (click)="save()" [disabled]="!this.campaignForm.valid">Save</button>
+            <button mat-raised-button color="primary" (click)="close()">Close</button>
+          </mat-dialog-actions>
+
+        </mat-dialog-content>
+
+      </form>
+
+</ng-template>
+
+<ng-template #campaignDetails>
+  <div>
+      <h3>Campaign Details</h3>
+      <form [formGroup]="campaignEditForm" autocomplete="off">
+        <mat-dialog-content class="campaign">
+          Name:
+          <mat-form-field class="campaign-control">
+            <input matInput type="text" formControlName="name">
+          </mat-form-field>
+          Description:
+          <mat-form-field class="campaign-control">
+            <input matInput type="text" formControlName="description">
+          </mat-form-field>
+          Telephone:
+          <mat-form-field class="campaign-control">
+            <input matInput type="text" formControlName="telephone">
+          </mat-form-field>
+          Email:
+          <mat-form-field class="campaign-control">
+            <input matInput type="email" formControlName="email" email="true">
+          </mat-form-field>
+          <mat-dialog-actions>
+            <button *ngIf="forEdit" class="mat-raised-button" (click)="editSave()" [disabled]="!this.campaignEditForm.valid">Save</button>
+            <button type="button" mat-raised-button color="primary" (click)="onCancel()">Close</button>
+          </mat-dialog-actions>
+        </mat-dialog-content>
+
+      </form>
+  </div>
+</ng-template>

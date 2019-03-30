@@ -1,0 +1,224 @@
+[
+  {
+    "type": "hidden",
+    "id": "_id"
+  },
+  {
+    "type": "hidden",
+    "id": "entity"
+  },
+  {
+    "type": "input",
+    "id": "firstName",
+    "label": "First Name",
+    "appearance": "outline",
+    "autocomplete": "firstName",
+    "gridItemClass": "grid-column-1",
+    "validators": [
+      {
+        "name": "required",
+        "args": null,
+        "propertyName": "required",
+        "message": "Please enter first name"
+      }
+    ],
+    "required": true
+  },
+  {
+    "type": "input",
+    "id": "lastName",
+    "label": "Last Name",
+    "appearance": "outline",
+    "autocomplete": "lastName",
+    "gridItemClass": "grid-column-2",
+    "validators": [
+      {
+        "name": "required",
+        "args": null,
+        "propertyName": "required",
+        "message": "Please enter last name"
+      }
+    ],
+    "required": true
+  },
+  {
+    "type": "input",
+    "id": "email",
+    "label": "Email",
+    "appearance": "outline",
+    "autocomplete": "email",
+    "gridItemClass": "grid-column-3",
+    "validators": [
+      {
+        "name": "required",
+        "args": null,
+        "propertyName": "required",
+        "message": "Please enter email address"
+      },
+      {
+        "name": "pattern",
+        "args": "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,10}$",
+        "propertyName": "required",
+        "message": "Please enter email address only"
+      }
+    ],
+    "required": true
+  },
+  {
+    "type": "input",
+    "id": "mobile",
+    "label": "Mobile",
+    "appearance": "outline",
+    "autocomplete": "mobile",
+    "gridItemClass": "grid-column-1",
+    "validators": [
+      {
+        "name": "required",
+        "args": null,
+        "propertyName": "required",
+        "message": "Please enter mobile number"
+      }
+    ],
+    "required": true
+  },
+  {
+    "type": "select",
+    "id": "gender",
+    "label": "Gender",
+    "options": ["Male", "Female"],
+    "appearance": "outline",
+    "gridItemClass": "grid-column-2"
+  },
+  {
+    "type": "date",
+    "inputType": "date",
+    "id": "dateOfBirth",
+    "label": "DOB",
+    "appearance": "outline",
+    "autocomplete": "dateOfBirth",
+    "gridItemClass": "grid-column-3",
+    "validators": [
+      {
+        "name": "required",
+        "args": null,
+        "propertyName": "required",
+        "message": "Please enter date of birth"
+      }
+    ],
+    "required": true
+  },
+  {
+    "type": "input",
+    "id": "telephone",
+    "label": "Telephone",
+    "appearance": "outline",
+    "autocomplete": "telephone",
+    "gridItemClass": "grid-column-1"
+  },
+  {
+    "type": "input",
+    "id": "addressLine1",
+    "label": "Address Line 1",
+    "appearance": "outline",
+    "autocomplete": "addressLine1",
+    "gridItemClass": "grid-column-2-span-2"
+  },
+  {
+    "type": "input",
+    "id": "addressLine2",
+    "label": "Address Line 2",
+    "appearance": "outline",
+    "autocomplete": "addressLine2",
+    "gridItemClass": "grid-column-2-span-2"
+  },
+  {
+    "type": "input",
+    "id": "city",
+    "label": "City",
+    "appearance": "outline",
+    "autocomplete": "city",
+    "gridItemClass": "grid-column-1"
+  },
+  {
+    "type": "input",
+    "id": "postcode",
+    "label": "Post Code",
+    "appearance": "outline",
+    "autocomplete": "postcode",
+    "gridItemClass": "grid-column-2"
+  },
+  {
+    "type": "input",
+    "id": "county",
+    "label": "Country",
+    "appearance": "outline",
+    "autocomplete": "county",
+    "gridItemClass": "grid-column-3"
+  },
+  {
+    "type": "select",
+    "id": "product",
+    "label": "Product",
+    "appearance": "outline",
+    "autocomplete": "product",
+    "options": ["Current Account", "Credit Card", "Mortgage"],
+    "gridItemClass": "grid-column-1",
+    "validators": [
+      {
+        "name": "required",
+        "args": null,
+        "propertyName": "required",
+        "message": "Please enter product"
+      }
+    ],
+    "required": true
+  },
+  {
+    "type": "input",
+    "id": "balance",
+    "label": "Balance",
+    "appearance": "outline",
+    "autocomplete": "balance",
+    "gridItemClass": "grid-column-2",
+    "validators": [
+      {
+        "name": "required",
+        "args": null,
+        "propertyName": "required",
+        "message": "Please enter balance"
+      },
+      {
+        "name": "pattern",
+        "args": "^\\d+(\\.\\d{1,6})?$",
+        "propertyName": "required",
+        "message": "Please enter only numbers"
+      }
+    ],
+    "required": true
+  },
+  {
+    "type": "input",
+    "id": "sharedKeyword",
+    "label": "Shared Keyword",
+    "appearance": "outline",
+    "autocomplete": "sharedKeyword",
+    "gridItemClass": "grid-column-3",
+    "validators": [
+      {
+        "name": "required",
+        "args": null,
+        "propertyName": "required",
+        "message": "Please enter shared secret"
+      }
+    ],
+    "required": true
+  },
+  {
+    "type": "hidden",
+    "id": "created_at"
+  },
+  {
+    "type": "hidden",
+    "id": "updated_at"
+  }
+]

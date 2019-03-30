@@ -1,0 +1,30 @@
+@import "../../themes/mat-variables";
+@import "../../themes/variables";
+
+// Note: Define all color and typography styles in a "theme file" for the component / plugin
+
+.mat-card {
+  padding: 0;
+}
+
+.mat-header {
+  background: rgba(0, 0, 0, 0.04);
+  padding-top: 8px;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mat-card-content {
+  padding: 16px;
+}
+
+.tile-align >::ng-deep .mat-figure{
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.disabledDiv {
+  pointer-events: none;
+}

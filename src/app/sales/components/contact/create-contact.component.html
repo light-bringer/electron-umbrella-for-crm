@@ -1,0 +1,60 @@
+<div class="crm-component-title-container">
+  <h1 class="crm-component-title">
+    Contact Details </h1>
+</div>
+<div #contentContainer>
+  <ng-container *ngIf="!item; then skeleton"></ng-container>
+  <ng-container *ngIf="item">
+    <div class="crm-grid-container">
+      <mat-card>
+        <mat-card-content>
+          <div class="disabledDiv">
+            <dynamic-form autocomplete="off"
+                          [className]="'crm-nested-grid-container'"
+                          [formGroup]="generalInformationGroup"
+                          [model]="generalInformationModel">
+            </dynamic-form>
+          </div>
+          <mat-label><b>Contact timestamp:</b> {{item.created_at}}</mat-label>
+
+          <div align="right">
+
+            <mat-label class="goverify-contact-control">Trust Tag</mat-label>
+            <input type="text" [value]="trustTagValue" class="disabledDiv goverify-contact-control">
+            <button class="goverify-contact-control" mat-raised-button color="primary"
+                    (click)="openCreateOutboundContactModal($event)">
+              Verify
+            </button>
+          </div>
+          <form [formGroup]="discussionForm">
+            <mat-label>Discussion details:</mat-label>
+            <textarea matTextareaAutosize matAutosizeMinRows=5 matAutosizeMaxRows=10 placeholder="Write discussions details here..."
+                      (input)="comments=$event.target.value" class="contact-control form-control" formControlName="discussionsTextCtrl" required [ngClass]="{ 'is-invalid': allowedSave && getForm.discussionsTextCtrl.errors }"></textarea>
+          </form>
+          <mat-label *ngIf="allowedSave && getForm.discussionsTextCtrl.errors" class="alert-text">Discussion text is required</mat-label>
+
+        </mat-card-content>
+
+        <mat-card-content>
+
+          <button mat-button class="crm-command-bar-button" [disabled]="!allowedSave" (click)="onSave(contentContainer)">
+            <mat-icon>save</mat-icon>
+            SAVE CONTACT
+          </button>&nbsp;
+          <button mat-raised-button color="primary" (click)="generalInformationGroup.reset(); location.back()">
+            Close
+          </button>
+        </mat-card-content>
+
+      </mat-card>
+    </div>
+  </ng-container>
+
+  <ng-template #skeleton>
+    <div class="crm-spinner-container" [style.height.px]="containerHeight">
+      <mat-spinner color="accent"></mat-spinner>
+    </div>
+  </ng-template>
+</div>
+
+

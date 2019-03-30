@@ -1,0 +1,62 @@
+<table mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="campaign_name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Campaign</th>
+    <td mat-cell *matCellDef="let element"> {{element.campaign_name}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="method">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Method</th>
+    <td mat-cell *matCellDef="let element"> {{element.method}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="trusttag">
+    <th mat-header-cell *matHeaderCellDef> Trust Tag</th>
+    <td mat-cell *matCellDef="let element"> {{element.trusttag}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="conversation">
+    <th mat-header-cell *matHeaderCellDef> Conversation</th>
+    <td mat-cell *matCellDef="let element"> {{element.conversation}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="created_at">
+    <th mat-header-cell *matHeaderCellDef> Created At</th>
+    <td mat-cell *matCellDef="let element"> {{element.created_at}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<div *ngIf="noData | async" class="no-records">
+  No records found
+</div>
+<mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20, 30, 40, 50]">
+</mat-paginator>
+
+
+<ng-template #contactDetails>
+  <div>
+
+      <h3>Outbound contact details</h3>
+      <form [formGroup]="contactForm" autocomplete="off">
+        <mat-dialog-content class="contact">
+          Campaign Type:
+          <mat-form-field class="contact-campaign-control">
+            <input matInput formControlName="campaignType" [value]="campaignType">
+          </mat-form-field>
+          Contact Method:
+          <mat-form-field class="contact-campaign-control">
+            <input matInput formControlName="contactMethod" [value]="contactMethod">
+          </mat-form-field>
+          Conversation:
+          <mat-form-field class="contact-campaign-control">
+            <input matInput formControlName="conversation" [value]="conversation">
+          </mat-form-field>
+        <mat-dialog-actions align="center">
+          <button type="button" mat-raised-button color="primary" (click)="onCancel()">Close</button>
+        </mat-dialog-actions>
+        </mat-dialog-content>
+
+      </form>
+  </div>
+</ng-template>

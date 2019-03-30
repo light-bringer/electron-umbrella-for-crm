@@ -1,0 +1,41 @@
+.contact-campaign-group {
+  display: inline-table;
+  flex-direction: column;
+}
+
+.contact-campaign-control {
+  margin: 5px;
+  align-content: flex-start;
+  width: 80%;
+}
+
+.dialog-content-class {
+  height: 500px;
+  width: 600px;
+}
+
+.goverify-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.goverify-radio-button {
+  margin: 5px;
+}
+
+.goverify-selected-value {
+  margin: 15px 0;
+}
+
+.actions-padding {
+  padding-top: 20px;
+}
+
+.trustTagMinifiedCode {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  font-weight: bold;
+}

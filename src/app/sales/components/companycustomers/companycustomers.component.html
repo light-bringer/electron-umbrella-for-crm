@@ -1,0 +1,75 @@
+<crm-command-bar class="crm-command-bar" fxHide.xs>
+  <button mat-button class="crm-command-bar-button" [routerLink]="['new','new']">
+    <mat-icon>add</mat-icon>
+    Add customer
+  </button>
+</crm-command-bar>
+
+<div class="crm-component-title-container">
+  <h1 class="crm-component-title"> Customers </h1>
+</div>
+
+<div fxLayout fxLayout.lt-md="column wrap" fxLayoutAlign="center center" fxLayoutGap.gt-sm="250px"
+     fxLayoutGap.lt.md="20px">
+  <mat-form-field>
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+
+<div class="crm-table-container">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+        <td mat-cell *matCellDef="let element">
+          <a [routerLink]="[element._id, 'view']">
+            {{element.firstName}}
+          </a>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> Last Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="mobile">
+        <th mat-header-cell *matHeaderCellDef> Mobile </th>
+        <td mat-cell *matCellDef="let element"> {{element.mobile}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-cell>
+            <button mat-icon-button routerLink="/create-contact/{{element._id}}">
+              <mat-icon matTooltip="Create new contact">perm_phone_msg</mat-icon>
+            </button>
+            <button mat-icon-button [routerLink]="[element._id, 'edit']">
+              <mat-icon matTooltip="Edit customer">edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="removeCustomer(element._id)">
+              <mat-icon matTooltip="Delete customer">delete</mat-icon>
+            </button>
+          </mat-cell>
+        </td>
+
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <div *ngIf="noData | async" class="no-records">
+      No customers found
+    </div>
+
+    <mat-paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+[
+  {
+    "type": "hidden",
+    "id": "_id"
+  },
+  {
+    "type": "hidden",
+    "id": "entity"
+  },
+  {
+    "type": "input",
+    "id": "firstName",
+    "label": "First Name",
+    "appearance": "outline",
+    "autocomplete": "firstName",
+    "gridItemClass": "grid-column-1",
+    "validators": [
+      {
+        "name": "required",
+        "args": null,
+        "propertyName": "required",
+        "message": "Please enter first name"
+      }
+    ],
+    "required": true
+  },
+  {
+    "type": "input",
+    "id": "lastName",
+    "label": "Last Name",
+    "appearance": "outline",
+    "autocomplete": "lastName",
+    "gridItemClass": "grid-column-2",
+    "validators": [
+      {
+        "name": "required",
+        "args": null,
+        "propertyName": "required",
+        "message": "Please enter last name"
+      }
+    ],
+    "required": true
+  },
+  {
+    "type": "input",
+    "id": "email",
+    "label": "Email",
+    "appearance": "outline",
+    "autocomplete": "email",
+    "gridItemClass": "grid-column-3",
+    "validators": [
+      {
+        "name": "required",
+        "args": null,
+        "propertyName": "required",
+        "message": "Please enter email address"
+      },
+      {
+        "name": "pattern",
+        "args": "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,10}$",
+        "propertyName": "required",
+        "message": "Please enter email address only"
+      }
+    ],
+    "required": true
+  },
+  {
+    "type": "input",
+    "id": "telephone",
+    "label": "Telephone",
+    "appearance": "outline",
+    "autocomplete": "telephone",
+    "gridItemClass": "grid-column-4"
+  },
+  {
+    "type": "hidden",
+    "id": "created_at"
+  },
+  {
+    "type": "hidden",
+    "id": "updated_at"
+  }
+]

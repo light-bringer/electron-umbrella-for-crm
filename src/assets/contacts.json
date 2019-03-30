@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "contact_5c389c667d654a9d6a303daf",
+    "entity": "contact",
+    "customer_id": "customer_5c389a9c08c5beb7d61259aa",
+    "campaign_id": "campaign_5c389c6635f26f77cba8bd11",
+    "method": "Surrey",
+    "conversation": "Hello, undefined! You talked about 12 mangos and bananas on Surrey",
+    "created_at": "2015-07-28T12:42:08.073Z",
+    "updated_at": "2017-02-10T07:43:46.073Z"
+  },
+  {
+    "_id": "contact_5c389c6671075de8c5434cd8",
+    "entity": "contact",
+    "customer_id": "customer_5c389a9c7145bf2032c6590a",
+    "campaign_id": "campaign_5c389c6696997b91daf714f9",
+    "method": "Surrey",
+    "conversation": "Hello, undefined! You talked about 74 mangos and bananas on Surrey",
+    "created_at": "2017-12-26T03:34:30.073Z",
+    "updated_at": "2015-10-07T01:00:08.073Z"
+  },
+  {
+    "_id": "contact_5c389c660c9287c22eaef362",
+    "entity": "contact",
+    "customer_id": "customer_5c389a9c7145bf2032c6590a",
+    "campaign_id": "campaign_5c389c6635f26f77cba8bd11",
+    "method": "Surrey",
+    "conversation": "Hello, undefined! You talked about 100 mangos and bananas on Surrey",
+    "created_at": "2017-05-06T10:31:08.073Z",
+    "updated_at": "2017-09-27T01:45:02.073Z"
+  },
+  {
+    "_id": "contact_5c389c668f3d2e476b2d3b14",
+    "entity": "contact",
+    "customer_id": "customer_5c389a9c08c5beb7d61259aa",
+    "campaign_id": "campaign_5c389c6696997b91daf714f9",
+    "method": "Email",
+    "conversation": "Hello, undefined! You talked about 86 mangos and bananas on Email",
+    "created_at": "2018-03-05T03:38:25.073Z",
+    "updated_at": "2015-04-19T11:24:09.073Z"
+  },
+  {
+    "_id": "contact_5c389c663c54efb69e788ee1",
+    "entity": "contact",
+    "customer_id": "customer_5c389a9c08c5beb7d61259aa",
+    "campaign_id": "campaign_5c389c6635f26f77cba8bd11",
+    "method": "Email",
+    "conversation": "Hello, undefined! You talked about 10 mangos and bananas on Email",
+    "created_at": "2018-05-08T10:07:57.073Z",
+    "updated_at": "2018-09-17T12:21:51.073Z"
+  }
+]

@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.no-records {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.contact {
+  display: inline-table;
+  flex-direction: column;
+}
+
+.contact-campaign-control {
+  margin: 5px;
+  align-content: flex-start;
+  width: 100%;
+}

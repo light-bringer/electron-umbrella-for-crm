@@ -1,0 +1,24 @@
+<div #gridContainer class="main-div">
+  <mat-card>
+    <mat-card-title>Credentials to connect to GoVerify API Server</mat-card-title>
+    <mat-label>User name: dev@ict22.co.uk</mat-label>
+    <br>
+    <mat-label *ngIf="show">Password: {{password}}</mat-label>
+    <mat-label *ngIf="!show">******</mat-label>&nbsp;
+    <button mat-raised-button color="primary" (click)="showHidePassword()">{{showHideLabel}}</button>
+    <mat-label>{{jwtToken}}</mat-label>
+  </mat-card>
+  <br>
+  <mat-card>
+    <mat-card-title>Reset application state</mat-card-title>
+    <mat-card-actions align="center">
+      <button type="button" mat-raised-button color="warn" (click)="cleanEverything()">CLEAN Everything!</button>
+    </mat-card-actions>
+    <mat-card-actions align="center">
+      <button type="button" mat-raised-button color="primary" (click)="seedCustomerData()">Seed customers data</button>
+      <button type="button" mat-raised-button color="primary" (click)="seedCampaignData()">Seed campaign data</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+

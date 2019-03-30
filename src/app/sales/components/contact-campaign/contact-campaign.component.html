@@ -1,0 +1,37 @@
+<div>
+  <mat-card-title>Trusttag</mat-card-title>
+  <form [formGroup]="contactForm" autocomplete="off" novalidate>
+    <mat-dialog-content class="dialog-content-class">
+
+      <mat-form-field class="contact-campaign-control">
+        <mat-select formControlName="campaignType" [(value)]="selectedCampaign" placeholder="Select campaign">
+          <mat-option *ngFor="let campaign of existingCampaigns" [value]="campaign">{{campaign.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="selectedCampaign != null" class="contact-campaign-control">
+        <mat-select formControlName="contactMethod" [(value)]="selectedContactMethod" placeholder="Select contact method">
+          <mat-option value="phone">Phone</mat-option>
+          <mat-option value="email">Email</mat-option>
+          <mat-option value="mobile">Mobile</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="selectedCampaign != null && selectedContactMethod != null" class="contact-campaign-control">
+        <mat-select formControlName="selectedKnownFact" [(value)]="selectedKnownFact" placeholder="Select contact method">
+          <mat-option [value]="customerData.dateOfBirth">Date of Birth</mat-option>
+          <mat-option [value]="customerData.product">Product</mat-option>
+          <mat-option [value]="customerData.balance">Balance</mat-option>
+          <mat-option [value]="customerData.sharedFact">Shared Fact</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-dialog-actions align="center" class="actions-padding">
+        <button *ngIf="selectedCampaign != null && selectedContactMethod != null && selectedKnownFact != null" mat-raised-button color="primary" (click)="callGoVerifyAndSaveData($event)">Trusttag
+        </button>
+        <button type="button" mat-raised-button color="primary" (click)="onCancel($event)">Close</button>
+      </mat-dialog-actions>
+    </mat-dialog-content>
+
+  </form>
+</div>

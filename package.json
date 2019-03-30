@@ -10,9 +10,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "version-update": "node ./update-build-version.js",
-    "electron": "electron ./electron.dev.js",
-    "electron-build": "ng build  && electron .",
-    "electron-build-prod": "ng build --prod  && electron ."
+    "electron-dev": "electron ./electron.dev.js",
+    "electron-run-dev": "concurrently \"ng serve\" && \"npm run electron-dev\"",
+    "electron-run-prod": "ng build --prod  && electron ./electron.prod.js"
   },
   "private": true,
   "dependencies": {

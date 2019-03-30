@@ -1,0 +1,22 @@
+<div class="crm-component-title-container">
+  <h1 class="crm-component-title"> Dashboards </h1>
+</div>
+
+<div #contentContainer>
+  <div #dashboardContainer >
+    <div fxLayout="row wrap" fxFlexOffset="32px" fxLayoutGap="32px">
+      <ngx-charts-number-card
+        [view]="smallView"
+        [scheme]="accountsColorScheme"
+        [results]="customers"
+        (select)="onSelect($event)">
+      </ngx-charts-number-card>
+
+      <ngx-charts-number-card
+        [view]="smallView"
+        [scheme]="contactsColorScheme"
+        [results]="campaigns"
+        (select)="onSelect($event)">
+      </ngx-charts-number-card>
+  </div>
+</div>
