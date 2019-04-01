@@ -8,5 +8,3 @@ packaging steps coming shortly..
 To package for windows : npm run package:win
 To package for Linux : npm run package:linux
 To package for Mac : npm run package:osx
-
-To package for all the flavors : npm run package:all
