@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {DashboardComponent} from '@app/sales/components/dashboard/dashboard.component';
+import {CampaignComponent} from '@app/sales/components/campaign/campaign.component';
 
 const routes: Routes = [
   {
     path: '**',
-    component: DashboardComponent
+    component: CampaignComponent
   }
 ];
 

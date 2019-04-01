@@ -5,7 +5,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {AngularMaterialModule} from './shared/angular-material.module';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {CustomerComponent, SnackBarComponent} from './components/customer/customer.component';
-import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {LibRoutingModule} from './lib-routing.module';
 import {UtilsModule} from '@app/utils/utils.module';
 import {LoggerService} from '@app/utils/services/logger/logger.service';
@@ -34,7 +33,6 @@ import { CreateContactComponent } from './components/contact/create-contact.comp
   ],
   declarations: [
     CustomerComponent,
-    DashboardComponent,
     SnackBarComponent,
     CampaignComponent,
     ContactComponent,
@@ -48,7 +46,6 @@ import { CreateContactComponent } from './components/contact/create-contact.comp
   ],
   exports: [
     CustomerComponent,
-    DashboardComponent,
     SnackBarComponent,
     CampaignComponent
   ],

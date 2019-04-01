@@ -5,7 +5,6 @@ import {Campaign, Contact, TrustTag} from '@app/sales/shared/models';
 import {PouchdbService} from '@app/shared/services/pouchdb.service';
 import {Guid} from 'guid-typescript';
 import {GoverifyService} from '@app/shared/services/goverify.service';
-import {environment} from '@env/environment';
 
 @Component({
   selector: 'crm-contact-campaign',
