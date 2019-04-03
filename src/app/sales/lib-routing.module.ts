@@ -6,7 +6,7 @@ import {ContactComponent} from '@app/sales/components/contact/contact.component'
 import {AdministrationComponent} from '@app/sales/components/administration/administration.component';
 import {CompanycustomersComponent} from '@app/sales/components/companycustomers/companycustomers.component';
 import {CreateContactComponent} from '@app/sales/components/contact/create-contact.component';
-//import {DashBoardComponent} from '@app/sales/components/dashboard/dashboard.component';
+// import {DashBoardComponent} from '@app/sales/components/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
