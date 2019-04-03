@@ -30,6 +30,18 @@
               "src/manifest.json",
               "src/assets",
               {
+                "glob": "package.json",
+                "input" : ".",
+                "output": "."
+
+              },
+              {
+                "glob": "electron.prod.js",
+                "input" : ".",
+                "output": "."
+
+              },
+              {
                 "glob": "**/*",
                 "input": "projects/sales/src/assets",
                 "output": "/assets"

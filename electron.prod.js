@@ -12,12 +12,12 @@ const createWindow = () => {
         backgroundColor: '#312450',
         width: 800,
         height: 600,
-        icon: path.join(__dirname, 'dist', appname, 'favicon.ico'),
+        icon: path.join(__dirname,  'favicon.ico'),
     });
 
 
     win.loadURL(url.format({
-        pathname: path.join(__dirname, 'dist', appname, 'index.html'),
+        pathname: path.join(__dirname, 'index.html'),
         protocol: 'file:',
         slashes: true
     }));
