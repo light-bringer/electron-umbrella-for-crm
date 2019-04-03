@@ -5,6 +5,7 @@
 
 packaging steps coming shortly..
 
-To package for windows : npm run package:win
-To package for Linux : npm run package:linux
-To package for Mac : npm run package:osx
+1. To package for windows : npm run package:win
+2. To package for Linux : npm run package:linux
+3. To package for Mac : npm run package:osx
+4. To package everything at once : npm run package:all
